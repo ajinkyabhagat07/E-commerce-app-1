@@ -7,12 +7,18 @@ import cors from "cors";
 import categoryRoute from "./routes/categoryRoute.js"
 import productRoutes from "./routes/productRoutes.js"
 import path from "path"
+import {fileURLToPath} from "url";
 
 //configure env
 dotenv.config();
 
 //database config
 connectDB();
+
+//esmodule fix
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //rest object from given pckage
 const app = express();
